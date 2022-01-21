@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="calculadora">
+        <div id="calculadora">
           <div class="display">
               <div id="valorAnterior"></div>
-              <div id="valorActual"></div>
+              <div id="valorActual">¡Hola Rocilda!</div>
           </div>
           <button class="col-2" onclick="display.borrarTodo()">C</button>
           <button onclick="display.borrar()">&larr;</button>
@@ -35,7 +35,15 @@
         </div>
     </div>
 
+    <div class="colorContainer">
+        <button class="color1" onclick="cambiarVerde()">CAMBIAR</button>
+        <button class="color2" onclick="cambiarAmarillo()">CAMBIAR</button>
+        <button class="color3" onclick="cambiarRojo()">CAMBIAR</button>
+        <button class="color4" onclick="cambiarVioleta()">CAMBIAR</button>
+    </div>
+
 <script src="main.js"></script>
 <script src="display.js"></script>
+<script src="color.js"></script>
 </body>
 </html>

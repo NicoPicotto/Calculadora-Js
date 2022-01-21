@@ -7,6 +7,12 @@ class Display {
         this.valorActual = ""
         this.valorAnterior = ""
         this.operacionEnCurso = undefined
+        this.signo = {
+            sumar: "+",
+            restar: "-",
+            multiplicar: "x",
+            dividir: "/"
+        }
     }
 
     //Operaciones
@@ -22,16 +28,12 @@ class Display {
         this.mostrarValores()
     }
 
-    calcular() {
-        const valorAnterior = parseFloat(this.valorAnterior)
-        const valorActual = parseFloat(this.valorActual)
-
-        if ( isNaN(valorActual) || isNaN(valorAnterior)) return
-        this.valorActual = this.calculador[this.operacionEnCurso](valorAnterior, valorActual)
-    }
-
     computar(operacion) {
         this.operacionEnCurso !== "igual" && this.calcular()
+        this.operacionEnCurso = operacion
+        this.valorAnterior = this.valorActual || this.valorAnterior
+        this.valorActual = ""
+        this.mostrarValores()
     }
 
     agregarNumero(numero){
@@ -41,8 +43,16 @@ class Display {
     }
 
     mostrarValores(){
-        this.displayValorActual.innerHTML = this.valorActual
-        this.displayValorAnterior.innerHTML = this.valorAnterior
+        this.displayValorActual.textContent = this.valorActual
+        this.displayValorAnterior.textContent = `${this.valorAnterior} ${this.signo[this.operacionEnCurso] || ""}`
+    }
+
+    calcular() {
+        const valorAnterior = parseFloat(this.valorAnterior)
+        const valorActual = parseFloat(this.valorActual)
+
+        if ( isNaN(valorActual) || isNaN(valorAnterior)) return
+        this.valorActual = this.calculador[this.operacionEnCurso](valorAnterior, valorActual)
     }
 }
 
