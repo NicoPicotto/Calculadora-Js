@@ -1,6 +1,6 @@
 # Calculadora - Nicolás Picotto
 
-_Esta app emula una calculadora completamente funcinal. Se le implementaron funciones para cambiar el estilo._
+_Esta app emula una calculadora completamente funcional. Se le implementaron funciones para cambiar el estilo._
 
 ## Visual 🚀
 
