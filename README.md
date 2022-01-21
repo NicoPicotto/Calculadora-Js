@@ -5,6 +5,7 @@ _Esta app emula una calculadora completamente funcional. Se le implementaron fun
 ## Visual 🚀
 
 ![1](https://github.com/NicoPicotto/calculadoraTest/blob/master/Captura.JPG)
+
 [Podés hacer click acá para probarla](https://dazzling-sammet-40be4e.netlify.app/)
 
 ## Construido con 🛠️
