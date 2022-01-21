@@ -4,7 +4,7 @@ const displayValorActual = document.getElementById("valorActual")
 const botonesNumeros = document.querySelectorAll(".numero")
 const botonesOperadores = document.querySelectorAll(".operador")
 
-//Funcionamiento
+//Funciones operadoras
 class Calculadora {
     sumar = (num1, num2) => {return num1 + num2}
     restar = (num1, num2) => {return num1 - num2}
@@ -12,6 +12,13 @@ class Calculadora {
     dividir = (num1, num2) => {return num1 / num2}
 }
 
-const calcu = new Calculadora()
+//Relacionando la función de agregar números con el HTML
+botonesNumeros.forEach(boton => {
+    boton.addEventListener("click", () => 
+        display.agregarNumero(boton.innerHTML)
+    )
+})
 
-console.log(calcu.sumar(2,3))
+botonesOperadores.forEach(boton => {
+    boton.addEventListener("click", () => display.computar(boton.value))
+})
